@@ -1,0 +1,13 @@
+current date-activity date= idle time
+
+
+
+setdate=current date+3600=1hour
+
+if(idle time>=settime)
+{
+	Update  table Set is_logged='0' where username=$username AND activy_date<current_date AND is_logged='1'
+}
+
+
+
