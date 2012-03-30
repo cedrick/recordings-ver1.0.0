@@ -1,0 +1,16 @@
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[rec_user]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[rec_user]
+GO
+
+CREATE TABLE [dbo].[rec_user] (
+	[id] [int] IDENTITY (1, 1) NOT NULL ,
+	[username] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[password] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[name] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[rdate] [datetime] NULL ,
+	[allowsave] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[is_logged] [varchar] (1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[act_date] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL 
+) ON [PRIMARY]
+GO
+

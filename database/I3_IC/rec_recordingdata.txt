@@ -1,0 +1,24 @@
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[rec_recordingdata]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[rec_recordingdata]
+GO
+
+CREATE TABLE [dbo].[rec_recordingdata] (
+	[RecordingFileName] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[RECORDINGID] [char] (22) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[RecordingFileSize] [int] NULL ,
+	[CategoryID] [int] NULL ,
+	[ArchiveID] [int] NULL ,
+	[RecordingTitle] [nvarchar] (80) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[RecordingDate] [datetime] NULL ,
+	[RecordingType] [int] NOT NULL ,
+	[CallIDkey] [nvarchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[ArchiveSequence] [int] NULL ,
+	[IsProcessed] [int] NOT NULL ,
+	[ProcessingMachine] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[ProcessingStartTime] [datetime] NULL ,
+	[RecordingDateOffset] [int] NULL ,
+	[RecordingFileCK] [char] (32) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[Version] [int] NOT NULL 
+) ON [PRIMARY]
+GO
+

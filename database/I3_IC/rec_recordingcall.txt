@@ -1,0 +1,18 @@
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[rec_recordingcall]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[rec_recordingcall]
+GO
+
+CREATE TABLE [dbo].[rec_recordingcall] (
+	[RECORDINGID] [char] (22) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[RecordedCallIDKey] [char] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[RecordingLength] [int] NULL ,
+	[ANI] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[CallDirection] [nvarchar] (25) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[CallType] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[LineName] [nvarchar] (80) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[RecordingMethod] [nvarchar] (80) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[RequestedBy] [nvarchar] (80) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[T1AniDnis] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL 
+) ON [PRIMARY]
+GO
+

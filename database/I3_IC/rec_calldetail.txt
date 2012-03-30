@@ -1,0 +1,51 @@
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[rec_calldetail]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[rec_calldetail]
+GO
+
+CREATE TABLE [dbo].[rec_calldetail] (
+	[CallId] [char] (18) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[CallType] [varchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[CallDirection] [varchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[LineId] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[StationId] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[LocalUserId] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[LocalNumber] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[LocalName] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[RemoteNumber] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[RemoteNumberCountry] [smallint] NOT NULL ,
+	[RemoteNumberLoComp1] [varchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[RemoteNumberLoComp2] [varchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[RemoteNumberFmt] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[RemoteNumberCallId] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[RemoteName] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[InitiatedDate] [datetime] NOT NULL ,
+	[InitiatedDateTimeGmt] [datetime] NOT NULL ,
+	[ConnectedDate] [datetime] NOT NULL ,
+	[ConnectedDateTimeGmt] [datetime] NOT NULL ,
+	[TerminatedDate] [datetime] NOT NULL ,
+	[TerminatedDateTimeGmt] [datetime] NOT NULL ,
+	[CallDurationSeconds] [int] NOT NULL ,
+	[HoldDurationSeconds] [int] NOT NULL ,
+	[LineDurationSeconds] [int] NOT NULL ,
+	[DNIS] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[CallEventLog] [varchar] (2000) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[CustomNum1] [int] NOT NULL ,
+	[CustomNum2] [int] NOT NULL ,
+	[CustomNum3] [int] NOT NULL ,
+	[CustomString1] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[CustomString2] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[CustomString3] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[CustomDateTime] [datetime] NOT NULL ,
+	[CustomDateTimeGmt] [datetime] NOT NULL ,
+	[InteractionType] [int] NOT NULL ,
+	[AccountCode] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[PurposeCode] [int] NULL ,
+	[DispositionCode] [int] NULL ,
+	[CallNote] [varchar] (1024) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[SiteId] [smallint] NOT NULL ,
+	[SubSiteId] [smallint] NOT NULL ,
+	[I3TimeStampGMT] [datetime] NOT NULL ,
+	[WrapUpCode] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL 
+) ON [PRIMARY]
+GO
+
